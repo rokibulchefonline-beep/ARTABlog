@@ -6,6 +6,7 @@
 <main class="wrap"><div class="grid">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<article <?php post_class('card'); ?>>
+		<?php if (has_post_thumbnail()) : ?><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium_large', ['class' => 'thumb']); ?></a><?php endif; ?>
 		<div class="meta"><?php echo esc_html(get_the_date()); ?></div>
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<p><?php echo esc_html(wp_trim_words(get_the_excerpt(), 30)); ?></p>
