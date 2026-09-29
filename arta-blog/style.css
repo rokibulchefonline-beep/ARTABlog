@@ -35,3 +35,5 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(-
 .site-footer a{color:var(--gold)}
 .feature{width:100%;height:auto;margin:0 0 1.5em;display:block}
 .thumb{height:200px;object-fit:cover;display:block;margin:-26px -26px 16px;width:calc(100% + 52px);max-width:none}
+img{max-width:100%;height:auto}
+.card{overflow:hidden}
