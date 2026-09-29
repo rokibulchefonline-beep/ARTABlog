@@ -1,0 +1,35 @@
+/*
+Theme Name: ARTA Blog
+Description: Custom blog theme for ARTA (Asian Restaurant & Takeaway Awards).
+Version: 1.0.0
+Text Domain: arta-blog
+*/
+:root{--navy:#0f1b2d;--navy2:#172740;--gold:#c9a24a;--cream:#faf7f0;--ink:#1d2433;--muted:#5d6678;--line:#e6dfd0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:18px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--navy2);text-decoration-color:var(--gold);text-underline-offset:3px}
+a:hover{color:var(--gold)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--navy);margin:0 0 .5em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.site-header{background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
+.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;padding-bottom:18px}
+.brand{font:700 1.7rem Georgia,serif;letter-spacing:.14em;color:#fff;text-decoration:none}
+.brand span{color:var(--gold)}
+.tagline{margin:0;font-size:.85rem;color:#b9c2d3}
+.nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:.95rem}
+.nav a:hover{color:var(--gold)}
+.hero{background:var(--navy2);color:#fff;padding:56px 0}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3rem);max-width:720px}
+.hero p{max-width:640px;color:#c9d2e2;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;padding:48px 0}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);padding:26px;display:flex;flex-direction:column}
+.card h2{font-size:1.4rem}
+.card h2 a{text-decoration:none}
+.meta{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+.more{margin-top:auto;font-weight:600}
+.entry{max-width:720px;margin:0 auto;padding:48px 20px}
+.entry h1{font-size:clamp(2rem,5vw,2.8rem)}
+.entry h2{margin-top:1.6em;font-size:1.5rem}
+.entry blockquote{border-left:4px solid var(--gold);margin:1.5em 0;padding:.2em 0 .2em 1.2em;color:var(--muted);font-family:Georgia,serif;font-style:italic}
+.site-footer{background:var(--navy);color:#b9c2d3;padding:32px 0;font-size:.9rem;margin-top:40px}
+.site-footer a{color:var(--gold)}
