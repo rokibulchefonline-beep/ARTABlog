@@ -1,39 +1,79 @@
 /*
 Theme Name: ARTA Blog
-Description: Custom blog theme for ARTA (Asian Restaurant & Takeaway Awards).
-Version: 1.0.0
+Description: Futuristic blog theme for ARTA (Asian Restaurant & Takeaway Awards).
+Version: 2.0.0
 Text Domain: arta-blog
 */
-:root{--navy:#0f1b2d;--navy2:#172740;--gold:#c9a24a;--cream:#faf7f0;--ink:#1d2433;--muted:#5d6678;--line:#e6dfd0}
+:root{--bg:#070b14;--bg2:#0d1424;--panel:#111b30;--cyan:#38e1ff;--gold:#f0b93a;--text:#e8edf7;--muted:#8d9ab3;--line:rgba(120,160,220,.18)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font:18px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--navy2);text-decoration-color:var(--gold);text-underline-offset:3px}
-a:hover{color:var(--gold)}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--navy);margin:0 0 .5em}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-.site-header{background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
-.site-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;padding-bottom:18px}
-.brand{font:700 1.7rem Georgia,serif;letter-spacing:.14em;color:#fff;text-decoration:none}
-.brand span{color:var(--gold)}
-.tagline{margin:0;font-size:.85rem;color:#b9c2d3}
-.nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:.95rem}
-.nav a:hover{color:var(--gold)}
-.hero{background:var(--navy2);color:#fff;padding:56px 0}
-.hero h1{color:#fff;font-size:clamp(2rem,5vw,3rem);max-width:720px}
-.hero p{max-width:640px;color:#c9d2e2;margin:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px;padding:48px 0}
-.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);padding:26px;display:flex;flex-direction:column}
-.card h2{font-size:1.4rem}
-.card h2 a{text-decoration:none}
-.meta{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
-.more{margin-top:auto;font-weight:600}
-.entry{max-width:720px;margin:0 auto;padding:48px 20px}
-.entry h1{font-size:clamp(2rem,5vw,2.8rem)}
-.entry h2{margin-top:1.6em;font-size:1.5rem}
-.entry blockquote{border-left:4px solid var(--gold);margin:1.5em 0;padding:.2em 0 .2em 1.2em;color:var(--muted);font-family:Georgia,serif;font-style:italic}
-.site-footer{background:var(--navy);color:#b9c2d3;padding:32px 0;font-size:.9rem;margin-top:40px}
-.site-footer a{color:var(--gold)}
-.feature{width:100%;height:auto;margin:0 0 1.5em;display:block}
-.thumb{height:200px;object-fit:cover;display:block;margin:-26px -26px 16px;width:calc(100% + 52px);max-width:none}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
 img{max-width:100%;height:auto}
-.card{overflow:hidden}
+a{color:var(--cyan);text-decoration:none}
+a:hover{color:var(--gold)}
+h1,h2,h3{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;font-weight:800;line-height:1.1;letter-spacing:-.01em;margin:0 0 .5em;color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold));z-index:100;box-shadow:0 0 12px var(--cyan)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font:800 1.6rem "Trebuchet MS",sans-serif;letter-spacing:.2em;color:#fff}
+.brand span{color:var(--gold)}
+.nav a{color:var(--text);margin-left:22px;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+.nav a:hover{color:var(--cyan)}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(90px);z-index:-1;opacity:.45}
+.hero:before{width:520px;height:520px;background:var(--cyan);top:-120px;right:-80px;transform:translateY(calc(var(--py,0) * .3px))}
+.hero:after{width:420px;height:420px;background:var(--gold);bottom:-140px;left:-100px;transform:translateY(calc(var(--py,0) * -.2px))}
+.grid-bg{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%)}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);max-width:900px}
+.hero p{max-width:600px;color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;margin:14px 12px 0 0;padding:13px 26px;border-radius:99px;font-weight:700;letter-spacing:.04em;background:linear-gradient(90deg,var(--cyan),var(--gold));color:#04101c;box-shadow:0 0 28px rgba(56,225,255,.35);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);color:#04101c;box-shadow:0 0 40px rgba(240,185,58,.5)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
+.scroll-cue{position:absolute;bottom:26px;left:50%;width:22px;height:38px;margin-left:-11px;border:2px solid var(--muted);border-radius:12px}
+.scroll-cue:after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--cyan);animation:cue 1.6s infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:14px 0;white-space:nowrap}
+.ticker div{display:inline-block;animation:tick 32s linear infinite;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.ticker b{color:var(--gold);margin:0 26px}
+@keyframes tick{to{transform:translateX(-50%)}}
+section.block{padding:96px 0}
+.section-head{max-width:640px;margin-bottom:44px}
+.section-head h2{font-size:clamp(1.9rem,4.5vw,3rem)}
+.section-head p{color:var(--muted);margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.stat{padding:32px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,var(--panel),var(--bg2))}
+.stat strong{display:block;font:800 3rem/1 "Trebuchet MS",sans-serif}
+.stat span{color:var(--muted);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+.card{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,var(--panel),var(--bg2));overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;transform-style:preserve-3d}
+.card:hover{border-color:var(--cyan);box-shadow:0 18px 50px rgba(56,225,255,.16)}
+.card .thumb{display:block;width:100%;height:210px;object-fit:cover;transition:transform .6s}
+.card:hover .thumb{transform:scale(1.07)}
+.thumbwrap{display:block;overflow:hidden}
+.card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.3rem}
+.card h3 a{color:#fff}
+.card p{color:var(--muted);font-size:.98rem}
+.meta{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.more{margin-top:auto;font-weight:700;font-size:.9rem;letter-spacing:.06em}
+.steps{counter-reset:s;display:grid;gap:18px}
+.step{display:flex;gap:22px;align-items:flex-start;padding:26px;border:1px solid var(--line);border-radius:18px;background:var(--bg2)}
+.step:before{counter-increment:s;content:"0" counter(s);font:800 2rem "Trebuchet MS",sans-serif;color:var(--cyan);min-width:56px}
+.step h3{font-size:1.15rem;margin-bottom:4px}
+.step p{margin:0;color:var(--muted)}
+.cta{text-align:center;padding:72px 24px;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 50% 0,rgba(56,225,255,.16),transparent 60%),var(--bg2)}
+.cta h2{font-size:clamp(1.9rem,4.5vw,3rem)}
+.cta p{color:var(--muted);max-width:520px;margin:0 auto 12px}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.entry{max-width:740px;margin:0 auto;padding:72px 22px}
+.entry h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+.entry h2{margin-top:1.7em;font-size:1.6rem}
+.entry p,.entry li{color:#c6cfe0}
+.entry .feature{width:100%;border-radius:20px;margin:0 0 2em;border:1px solid var(--line)}
+.entry blockquote{margin:2em 0;padding:1em 1.4em;border-left:3px solid var(--gold);background:var(--bg2);border-radius:0 14px 14px 0;font-size:1.2rem;color:#fff}
+.site-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:.9rem;margin-top:60px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}

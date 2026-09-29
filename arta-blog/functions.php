@@ -6,5 +6,7 @@ add_action('after_setup_theme', function () {
 	register_nav_menu('primary', 'Primary menu');
 });
 add_action('wp_enqueue_scripts', function () {
-	wp_enqueue_style('arta-blog', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
+	$dir = get_stylesheet_directory();
+	wp_enqueue_style('arta-blog', get_stylesheet_uri(), [], filemtime($dir . '/style.css'));
+	wp_enqueue_script('arta-blog', get_theme_file_uri('assets/main.js'), [], filemtime($dir . '/assets/main.js'), true);
 });
